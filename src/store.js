@@ -10,8 +10,6 @@ const reducers = combineReducers({
 
 const store = createStore(reducers, {}, applyMiddleware(thunk));
 
-store.subscribe(() => {
-    console.log('Store updated: ', store.getState());
-});
+
 
 export default store;

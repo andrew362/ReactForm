@@ -9,7 +9,7 @@ const Product = ({id, title, subtitle, image, price, quantity, removeItemFromCar
         <div className={quantity <= 0 ? [styles.card, styles.faded].join(' ') : styles.card} >
             <div className={styles.cardPicture}>
                 <a href="#">
-                    <img alt={styles.thumbnail} src={image} />
+                    <img alt="thumbnail" src={image} />
                 </a>
             </div>
             <div className={styles.cardContent}>

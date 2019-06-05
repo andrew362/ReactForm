@@ -29,6 +29,7 @@ function App({products}) {
               <Redirect to="/cart"/>
             )
           )} />
+           <Route path="/" render={() => <Redirect to="/cart" />} />
           </Switch>
         </Suspense>
         </Router>
