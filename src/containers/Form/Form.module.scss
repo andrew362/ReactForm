@@ -1,12 +1,15 @@
-@import '../../variables.scss';
+@import '../../styles/variables';
 
 .formContainer {
 	padding: 10px 50px;
 	display: flex;
 	flex-direction: column;
 	padding: 10px 80px;
+
 	form {
 		width: 60%;
+		margin: 2rem auto;
+
 		.row {
 			height: 50px;
 			display: flex;
@@ -14,6 +17,7 @@
 			align-items: flex-end;
 			flex-wrap: wrap;
 			margin: 20px auto;
+
 			label {
 				font-size: 1.5rem;
 				font-weight: 700;
@@ -21,8 +25,10 @@
 				white-space: nowrap;
 				min-width: 140px;
 			}
+
 			.inputField {
 				flex-grow: 1;
+
 				input,
 				select {
 					width: 100%;
@@ -31,12 +37,14 @@
 					height: 35px;
 					padding: 0 10px;
 					font-size: 1.1rem;
+
 					&.novalidate {
 						&:focus {
 							border-color: $color-primary;
 						}
 					}
 				}
+
 				.error {
 					position: absolute;
 					color: red;
@@ -44,6 +52,7 @@
 				}
 			}
 		}
+
 		.btn {
 			width: 120px;
 			height: 40px;
@@ -52,10 +61,12 @@
 			border: $border-gray;
 			border-radius: 2px;
 			font-weight: 700;
+
 			&.active {
 				background-color: $color-primary;
 				cursor: pointer;
 			}
+
 			&[disabled] {
 				background-color: rgba($color-gray, 0.4);
 				color: $color-gray;

@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './variables';
 
 * {
 	box-sizing: border-box;
@@ -28,7 +28,7 @@ html {
 		}
 		.title {
 			font-size: 4rem;
-			margin: 7rem auto;
+			margin: 1rem auto;
 			span {
 				color: $color-primary;
 			}
@@ -37,16 +37,16 @@ html {
 	.content {
 		background-color: $color-primary;
 		bottom: 0;
-		height: 55%;
+		height: 80%;
 		width: 100%;
 		position: absolute;
 		.container {
 			position: absolute;
-			height: 110%;
+			height: 100%;
 			background-color: #fff;
 			bottom: 50px;
-			left: 50px;
-			right: 0;
+			left: 100px;
+			right: 100px;
 			box-shadow: -1px 2px 10px 1px rgba($color-black, 0.2);
 			overflow-y: auto;
 

@@ -1,4 +1,4 @@
-@import '../../../variables.scss';
+@import '../../styles/variables';
 
 .currencySymbol {
 	margin-left: 5px;
@@ -15,25 +15,31 @@
 	max-width: 1000px;
 	width: 750px;
 	margin: 0 auto;
+
 	&.faded {
 		opacity: 0.5;
 	}
+
 	.cardPicture {
 		img {
 			box-shadow: 0px 2px 3px 1px rgba($color-black, 0.3);
 		}
 	}
+
 	.cardContent {
 		max-width: 50%;
 		flex: 1 1 auto;
+
 		a {
 			text-decoration: none;
 		}
+
 		h3 {
 			font-size: 1.6rem;
 			font-weight: 500;
 			color: $color-black;
 		}
+
 		p {
 			font-size: 1.2rem;
 			line-height: 2rem;
@@ -43,12 +49,14 @@
 			text-overflow: ellipsis;
 		}
 	}
+
 	.cardControls {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		height: 70px;
 		align-items: flex-end;
+
 		.cardControlsTop {
 			svg {
 				height: 20px;
@@ -56,13 +64,16 @@
 				cursor: pointer;
 			}
 		}
+
 		.cardControlsBottom {
 			display: flex;
 			align-items: center;
+
 			.cardItemQuantity {
 				width: 100px;
 				display: flex;
 				align-items: center;
+
 				button {
 					background-color: #fff;
 					border: $border-gray;
@@ -74,11 +85,13 @@
 					color: $color-gray;
 					font-weight: 100;
 					cursor: pointer;
+
 					&[disabled] {
 						opacity: 0.4;
 						cursor: not-allowed;
 					}
 				}
+
 				input {
 					width: 30px;
 					border: none;
@@ -87,6 +100,7 @@
 					color: $color-gray;
 				}
 			}
+
 			.cardPrice {
 				font-size: 1.5rem;
 				font-weight: 700;
@@ -106,9 +120,11 @@
 @media (max-width: 750px) {
 	.card {
 		width: auto !important;
+
 		.cardContent {
 			max-width: 70% !important;
 		}
+
 		.cardControls {
 			width: 100%;
 		}
@@ -119,9 +135,11 @@
 	.card {
 		//height: 300px !important;
 		min-height: 390px !important;
+
 		.cardContent {
 			max-width: 100% !important;
 		}
+
 		.cardPicture {
 			width: 100%;
 			margin: 0 auto;

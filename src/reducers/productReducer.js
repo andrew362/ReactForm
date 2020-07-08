@@ -7,18 +7,16 @@ import {
   DECREASE_ITEM_QUANTITY,
   CHANGE_ITEM_QUANTITY,
   UPDATE_PRODUCT,
-  RESET_CHANGED_VALUE
-} from '../actions/productActions';
+  RESET_CHANGED_VALUE,
+} from '../actions/actions';
 
 const initialState = {
   items: [],
   loading: false,
   error: null,
   fetched: false,
-  posting: false
+  posting: false,
 };
-
-
 
 export default function productReducer(state = initialState, action) {
   switch (action.type) {
@@ -26,7 +24,7 @@ export default function productReducer(state = initialState, action) {
       return {
         ...state,
         loading: true,
-        error: null
+        error: null,
       };
 
     case FETCH_PRODUCTS_SUCCESS:
@@ -34,7 +32,7 @@ export default function productReducer(state = initialState, action) {
         ...state,
         loading: false,
         fetched: true,
-        items: action.payload.products
+        items: action.payload.products,
       };
 
     case FETCH_PRODUCTS_FAILURE:
@@ -43,14 +41,14 @@ export default function productReducer(state = initialState, action) {
         ...state,
         loading: false,
         error: action.payload.error,
-        items: []
+        items: [],
       };
 
     case REMOVE_ITEM_FROM_CARD:
-      let newCardList = state.items.filter(el => el.id !== action.payload);
+      let newCardList = state.items.filter((el) => el.id !== action.payload);
       return {
         ...state,
-        items: newCardList
+        items: newCardList,
       };
 
     case INCREASE_ITEM_QUANTITY:
@@ -61,17 +59,17 @@ export default function productReducer(state = initialState, action) {
             el.quantity = 100;
           }
           if (el.quantity < 0) {
-            el.quantity = 0
+            el.quantity = 0;
           }
           el.changed = true;
-          return el
+          return el;
         } else {
-          return el
+          return el;
         }
-      })
+      });
       return {
         ...state,
-        items: newItemsAmountInc
+        items: newItemsAmountInc,
       };
 
     case DECREASE_ITEM_QUANTITY:
@@ -82,17 +80,17 @@ export default function productReducer(state = initialState, action) {
             el.quantity = 100;
           }
           if (el.quantity < 0) {
-            el.quantity = 0
+            el.quantity = 0;
           }
           el.changed = true;
-          return el
+          return el;
         } else {
-          return el
+          return el;
         }
-      })
+      });
       return {
         ...state,
-        items: newItemsAmountDec
+        items: newItemsAmountDec,
       };
 
     case CHANGE_ITEM_QUANTITY:
@@ -103,31 +101,31 @@ export default function productReducer(state = initialState, action) {
             el.quantity = 100;
           }
           if (el.quantity < 0) {
-            el.quantity = 0
+            el.quantity = 0;
           }
           el.changed = true;
-          return el
+          return el;
         } else {
-          return el
+          return el;
         }
-      })
+      });
       return {
         ...state,
-        items: newItemsAmountOnInput
+        items: newItemsAmountOnInput,
       };
 
     case UPDATE_PRODUCT:
       return {
         ...state,
-        posting: action.payload
+        posting: action.payload,
       };
 
     case RESET_CHANGED_VALUE:
-      let resetCangedValuesForItem = state.items.map(el => {
+      let resetCangedValuesForItem = state.items.map((el) => {
         if (el.changed) {
           el.changed = false;
         }
-        return el
+        return el;
       });
       return {
         ...state,
